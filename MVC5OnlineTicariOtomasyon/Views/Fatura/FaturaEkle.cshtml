@@ -1,0 +1,29 @@
+﻿@model MVC5OnlineTicariOtomasyon.Models.Siniflar.Faturalar
+@{
+    ViewBag.Title = "FaturaEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Yeni Fatura Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.FaturaSeriNo)
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FaturaSiraNo)
+    @Html.TextBoxFor(x => x.FaturaSiraNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Saat)
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x=>x.KategoriId, new {@class="form-control"})*@
+    <br />
+    @Html.LabelFor(x => x.TeslimEden)
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeslimAlan)
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+    <button class="btn btn-warning">Güncelle</button>
+</form>

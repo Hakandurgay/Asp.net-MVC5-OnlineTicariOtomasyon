@@ -1,0 +1,36 @@
+﻿@model MVC5OnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "YeniSatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>YeniSatis</h2>
+
+
+<h2>Yeni Ürün Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.Urun)
+    @Html.DropDownListFor(x => x.UrunId, (List<SelectListItem>)ViewBag.urun, new { @class = "form-control" })
+ 
+    <br />
+    @Html.Label("Cari") @*labelforda controllerdan db dekini çekiyor. label kullanınca direkt yazdığın çıkıyor*@
+    @Html.DropDownListFor(x => x.CariId, (List<SelectListItem>)ViewBag.cari, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.Personel)
+    @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.personel, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.Adet)
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+    @*@Html.LabelFor(x => x.Fiyat)
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />*@
+    @*@Html.LabelFor(x => x.ToplamTutar)
+    @Html.TextBoxFor(x=>x.ToplamTutar,ViewBag.tutar, new { @class = "form-control" })
+    <br />*@
+    <button class="btn btn-warning">Satış Yap</button>
+</form>

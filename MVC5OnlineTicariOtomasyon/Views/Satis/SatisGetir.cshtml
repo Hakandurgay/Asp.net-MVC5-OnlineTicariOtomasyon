@@ -1,0 +1,39 @@
+﻿@model MVC5OnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <form>
+        <h2>Satış Güncelleme</h2>
+        @using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post))
+        {
+            @Html.HiddenFor(x => x.SatisId)   
+            <br />
+            
+            @Html.LabelFor(x => x.Urun)
+            @Html.DropDownListFor(x => x.UrunId, (List<SelectListItem>)ViewBag.urun, new { @class = "form-control" })
+ 
+            <br />
+            @Html.Label("Cari") @*labelforda controllerdan db dekini çekiyor. label kullanınca direkt yazdığın çıkıyor*@
+            @Html.DropDownListFor(x => x.CariId, (List<SelectListItem>)ViewBag.cari, new { @class = "form-control" })
+
+            <br />
+            @Html.LabelFor(x => x.Personel)
+            @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.personel, new { @class = "form-control" })
+
+            @Html.LabelFor(x => x.Adet)
+            @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.Fiyat)
+            @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.ToplamTutar)
+            @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.Tarih)
+            @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+            <button class="btn btn-primary">Güncelle</button>
+        }
+
+    </form>
+

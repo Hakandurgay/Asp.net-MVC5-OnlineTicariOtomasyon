@@ -1,0 +1,42 @@
+﻿@using MVC5OnlineTicariOtomasyon.Models.Siniflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top: 20px; margin-left: 20px;">
+    <tr>
+        <th>ID</th>
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Toplam</th>
+        <th>Teslin Eden</th>
+        <th>Teslim Alan</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var faturalar in Model)
+    {
+        <tr>
+            <td>@faturalar.FaturaId</td>
+            <td>@faturalar.FaturaSeriNo</td>
+            <td>@faturalar.FaturaSiraNo</td>
+            <td>@faturalar.VergiDairesi</td>
+            <td>@faturalar.Tarih</td>
+            <td>@faturalar.Saat</td>
+            <td>100</td>
+            <td>@faturalar.TeslimEden</td>
+            <td>@faturalar.TeslimAlan</td>
+            <td><a href="/Fatura/FaturaGetir/@faturalar.FaturaId" class="btn btn-danger">Guncelle</a></td>  @*BUTONA BASINCA CONTROLLERDA NEREYE GİDECEĞİNİ BELİRTİYOR*@
+            @*güncelleme kısmı diğerleri ile aynı olduğu için atlıyorum*@
+           
+
+        </tr>
+    }
+
+</table>
+<a href="/Fatura/FaturaEkle" class="btn btn-info ">Fatura Ekle</a>   @*//bu yazdığı controllerdaki fonksiyınun adı?*@
+

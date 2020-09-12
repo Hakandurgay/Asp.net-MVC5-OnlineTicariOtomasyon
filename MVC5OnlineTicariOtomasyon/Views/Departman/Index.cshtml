@@ -1,0 +1,31 @@
+﻿@using MVC5OnlineTicariOtomasyon.Models.Siniflar
+@model List<Departman>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top: 20px; margin-left: 20px;">
+    <tr>
+        <th>ID</th>
+        <th>Departman Ad</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+
+    </tr>
+    @foreach (var departman in Model)
+    {
+        <tr>
+            <td>@departman.DepartmanId</td>
+            <td>@departman.DepartmanAd</td>
+            <td><a href="/Departman/DepartmanSil/@departman.DepartmanId" class="btn btn-danger">Sil</a></td>  @*BUTONA BASINCA CONTROLLERDA NEREYE GİDECEĞİNİ BELİRTİYOR*@
+            <td><a href="/Departman/DepartmanGetir/@departman.DepartmanId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Departman/DepartmanDetay/@departman.DepartmanId" class="btn btn-success">Departman Detay</a></td>
+
+        </tr>
+    }
+
+</table>
+<a href="/Departman/DepartmanEkle" class="btn btn-info ">Departman Ekle</a>   @*//bu yazdığı controllerdaki fonksiyınun adı?*@
+
