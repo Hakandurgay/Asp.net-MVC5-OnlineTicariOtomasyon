@@ -10,7 +10,7 @@
 @using (Html.BeginForm("PersonelGuncelle","Personel",FormMethod.Post))
 {     
     <div class="form-group">
-        @Html.HiddenFor(x => x.PersonelId)    @*controller tarafına idyi aktaryıor*@
+        @Html.HiddenFor(x => x.PersonelId)    @*controller tarafına idyi aktarıyor*@
         @Html.LabelFor(x => x.PersonelAd)
         @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
         <br />
